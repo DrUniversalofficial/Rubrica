@@ -16,33 +16,26 @@
 #Implementare funzioni:
 
 def visualizza_lista(lista):
-    #lista =  input('inserisci lista di nomi ').split()
-    print(lista)
-    return lista
-
+    for nome in lista:
+        print(nome)
 
 def aggiungi_nome(lista, nome):
     lista.append(nome)
-    print(lista)
     return lista
 
-def elimina_nome(lista, nome):
+def elimina_nome(nomi, nome):
     nuova_lista = []
-    for a in lista:
-        if a != nome:
-            nuova_lista.append(nome)
-            print(nuova_lista)
+    for n in nomi:
+        if n != nome:
+            nuova_lista.append(n)
     return nuova_lista
 
 def modifica_nome(lista, vecchio_nome, nuovo_nome):
-    risultato = ""
-    indice = risultato(vecchio_nome, lista)
-    lista[indice] = nuovo_nome
-    return nuovo_nome
+    for i in range(len(lista)):
+        if lista[i] == vecchio_nome:
+            lista[i] = nuovo_nome
+    return lista 
 
-
-
-    
 
 #Avviamo il programma
 print("Benvenuto nel programma rubrica:")
@@ -58,14 +51,14 @@ while not esci:
             visualizza_lista(lista) 
         case 'aggiungi':
             nome = input("Inserisci nome da aggiungere >> ")
-            aggiungi_nome(lista, nome)
+            lista = aggiungi_nome(lista, nome)
         case 'elimina':
             nome = input("Inserisci nome da eliminare >> ")
-            elimina_nome(lista, nome)
+            lista = elimina_nome(lista, nome)
         case 'modifica':
             nome = input("Inserisci nome da modificare >> ")
             nuovo_nome = input("Inserisci il nuovo nome >> ")
-            modifica_nome(lista, nome, nuovo_nome)
+            lista = modifica_nome(lista, nome, nuovo_nome)
         case 'esci':
             print("sto chiudendo il programma")
             esci = True
@@ -74,5 +67,3 @@ while not esci:
     
     if not esci:
         comando = input("inserire comando >> ")
-
-    
