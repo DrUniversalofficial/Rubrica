@@ -12,12 +12,14 @@
 # Luca Samuele
 # Danila
 
+
 #Implementare funzioni:
 
 def visualizza_lista(lista):
     #lista =  input('inserisci lista di nomi ').split()
     print(lista)
     return lista
+
 
 def aggiungi_nome(lista, nome):
     lista.append(nome)
@@ -49,7 +51,6 @@ print("comandi disponibili: lista, aggiungi, elimina, modifica, esci")
 comando = input("inserire comando >> ")
 esci = False
 lista = []
-
 while not esci:
 
     match comando:
