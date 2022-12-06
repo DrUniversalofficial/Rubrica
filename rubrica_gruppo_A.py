@@ -15,18 +15,32 @@
 #Implementare funzioni:
 
 def visualizza_lista(lista):
-    lista =  input('inserisci lista di nomi ').split()
+    #lista =  input('inserisci lista di nomi ').split()
     print(lista)
     return lista
 
 def aggiungi_nome(lista, nome):
-    return 
+    lista.append(nome)
+    print(lista)
+    return lista
 
 def elimina_nome(lista, nome):
-    return
+    nuova_lista = []
+    for a in lista:
+        if a != nome:
+            nuova_lista.append(nome)
+            print(nuova_lista)
+    return nuova_lista
 
 def modifica_nome(lista, vecchio_nome, nuovo_nome):
-    return
+    risultato = ""
+    indice = risultato(vecchio_nome, lista)
+    lista[indice] = nuovo_nome
+    return nuovo_nome
+
+
+
+    
 
 #Avviamo il programma
 print("Benvenuto nel programma rubrica:")
